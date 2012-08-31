@@ -1,0 +1,11 @@
+{% if all_candidates %}
+	<ul>
+	{% for candidate in all_candidates %}
+		<li>{{ candidate.name }}
+			{% for rankings in candidate.ranking_set.all %}
+				{{ rankings.program.name }}
+			{% endfor %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
